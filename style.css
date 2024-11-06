@@ -1535,7 +1535,7 @@ img {
     position: relative;
     width: 0px;
     height: 100%;
-    background: #12A89D;
+    background: #12A89D !important;
     z-index: 1; }
   .barfiller .tipWrap {
     display: none; }
