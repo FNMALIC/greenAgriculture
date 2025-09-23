@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="01e4415d-b961-454d-affb-7e4aab12befb" name="Changes" comment="reolve role problem in server , and create the user interfaces to start in with">
+      <change beforePath="$PROJECT_DIR$/android-chrome-192x192.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android-chrome-512x512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apple-touch-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/animate.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/classy-nav.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/elegant-icon.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/font-awesome.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/magnific-popup.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/owl.carousel.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/favicon-16x16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/favicon-32x32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/ElegantIcons.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/ElegantIcons.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/ElegantIcons.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/ElegantIcons.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/FontAwesome.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/classy.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/classy.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/classy.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/classy.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/fontawesome-webfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/fontawesome-webfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/fontawesome-webfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/fontawesome-webfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/fontawesome-webfont.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/android-chrome-192x192.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/android-chrome-512x512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/apple-touch-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/core-img/b1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/core-img/b2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/core-img/b3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/core-img/b4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/core-img/cf1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/core-img/cf2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/core-img/cf3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/core-img/cf4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/core-img/collab.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/core-img/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/core-img/leaf.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/core-img/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/core-img/pot.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/core-img/predictive.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/core-img/s1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/core-img/s2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/core-img/s3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/core-img/transaction.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/favicon-16x16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/favicon-32x32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/getc.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/image1.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/image2.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/active.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/bootstrap/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/bootstrap/popper.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/jquery/jquery-2.2.4.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/plugins/plugins.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/site.webmanifest" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/style.css.map" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="2r5JqWwubLJNdLNzoYeEFcetV4Z" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Node.js.next.config.ts.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHELLCHECK.PATH": "I do mind",
+    "git-widget-placeholder": "main",
+    "js.debugger.nextJs.config.created.client": "true",
+    "last_opened_file_path": "/home/fnmalic/Desktop/croplink",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "npm.dev.executor": "Run",
+    "ts.external.directory.path": "/home/fnmalic/Desktop/croplink/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/components" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/app" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app" />
+      <recent name="$PROJECT_DIR$/app/(main)" />
+      <recent name="$PROJECT_DIR$/app/auth" />
+      <recent name="$PROJECT_DIR$/app/admin/posts" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.dev">
+    <configuration name="Next.js: debug client-side" type="JavascriptDebugType" uri="http://localhost:3000/">
+      <method v="2" />
+    </configuration>
+    <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.dev" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-9c94529fcfe0-JavaScript-WS-252.26199.162" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="01e4415d-b961-454d-affb-7e4aab12befb" name="Changes" comment="" />
+      <created>1735843194256</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1735843194256</updated>
+      <workItem from="1735843196791" duration="9103000" />
+      <workItem from="1735903629871" duration="8076000" />
+      <workItem from="1735932860406" duration="11406000" />
+      <workItem from="1736006119599" duration="15986000" />
+      <workItem from="1736152473001" duration="1262000" />
+      <workItem from="1736234863194" duration="3647000" />
+      <workItem from="1736284472692" duration="12019000" />
+      <workItem from="1736782410746" duration="94000" />
+      <workItem from="1738679550147" duration="125000" />
+      <workItem from="1738680128487" duration="2397000" />
+      <workItem from="1738688610776" duration="9175000" />
+      <workItem from="1738762081364" duration="2531000" />
+      <workItem from="1738832940835" duration="30000" />
+      <workItem from="1739883707844" duration="69000" />
+      <workItem from="1739952409583" duration="616000" />
+      <workItem from="1740046006284" duration="609000" />
+      <workItem from="1740056155239" duration="48000" />
+      <workItem from="1740151879090" duration="84000" />
+      <workItem from="1740211307240" duration="2061000" />
+      <workItem from="1746124442459" duration="2433000" />
+      <workItem from="1746184095561" duration="22000" />
+      <workItem from="1747224152628" duration="740000" />
+      <workItem from="1747852295501" duration="3011000" />
+      <workItem from="1747898199778" duration="5108000" />
+      <workItem from="1747919122346" duration="169000" />
+      <workItem from="1747987932761" duration="12714000" />
+      <workItem from="1748077466469" duration="148000" />
+      <workItem from="1748081638583" duration="4383000" />
+      <workItem from="1748270347332" duration="640000" />
+      <workItem from="1748341365634" duration="79000" />
+      <workItem from="1748436699459" duration="8486000" />
+      <workItem from="1748449691378" duration="10968000" />
+      <workItem from="1748678258507" duration="622000" />
+      <workItem from="1748772269527" duration="3005000" />
+      <workItem from="1748849925771" duration="607000" />
+      <workItem from="1748935748819" duration="9310000" />
+      <workItem from="1749059114906" duration="2541000" />
+      <workItem from="1749077282783" duration="3192000" />
+      <workItem from="1749772317751" duration="598000" />
+      <workItem from="1749799942341" duration="2374000" />
+      <workItem from="1749890934921" duration="2184000" />
+      <workItem from="1749907230605" duration="65000" />
+      <workItem from="1749939010101" duration="1871000" />
+      <workItem from="1749943038215" duration="855000" />
+      <workItem from="1750061381774" duration="7000" />
+      <workItem from="1750117473677" duration="3164000" />
+      <workItem from="1750662941566" duration="907000" />
+      <workItem from="1750848821842" duration="10095000" />
+      <workItem from="1751051962681" duration="382000" />
+      <workItem from="1751096980587" duration="299000" />
+      <workItem from="1751445558667" duration="394000" />
+      <workItem from="1751743630697" duration="10892000" />
+      <workItem from="1755165639067" duration="474000" />
+      <workItem from="1755166437491" duration="3346000" />
+      <workItem from="1755186177907" duration="55000" />
+      <workItem from="1755342531733" duration="3682000" />
+      <workItem from="1755502863548" duration="2753000" />
+      <workItem from="1755587966721" duration="2585000" />
+      <workItem from="1755682497644" duration="651000" />
+      <workItem from="1758541055311" duration="2791000" />
+      <workItem from="1758545052969" duration="946000" />
+      <workItem from="1758550666184" duration="1682000" />
+      <workItem from="1758621747932" duration="1136000" />
+      <workItem from="1758625314544" duration="2375000" />
+    </task>
+    <task id="LOCAL-00001" summary="user management  , and and admin panel complete">
+      <option name="closed" value="true" />
+      <created>1735852505767</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1735852505767</updated>
+    </task>
+    <task id="LOCAL-00002" summary="reolve role problem in server , and create the user interfaces to start in with">
+      <option name="closed" value="true" />
+      <created>1735991419610</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1735991419610</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="user management  , and and admin panel complete" />
+    <MESSAGE value="reolve role problem in server , and create the user interfaces to start in with" />
+    <option name="LAST_COMMIT_MESSAGE" value="reolve role problem in server , and create the user interfaces to start in with" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/components/AuthenticatedComments.tsx</url>
+          <line>39</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

@@ -1,0 +1,42 @@
+services:
+  blog-app:
+    image: ghcr.io/fnmalic/my-nextjs-app:latest
+    container_name: blog-app
+    restart: unless-stopped
+    environment:
+      # Node Environment
+      NODE_ENV: production
+
+      # API Configuration - Use internal localhost for API calls
+      NEXT_PUBLIC_API_URL: http://localhost:3000
+
+      # MongoDB Configuration
+      MONGODB_URI: mongodb+srv://nixonfonkou:ja8y0Ngyrvzeezfe@cluster0.gmrc868.mongodb.net/?retryWrites=true&w=majority&appName=AtlasApp
+
+      # NextAuth Configuration
+      NEXTAUTH_URL: http://localhost:3000
+      NEXTAUTH_SECRET: shalsjdnlakdnwpoinqwdqw+6+6qd;adasdkbsdas54613
+
+      # Supabase Configuration
+      NEXT_PUBLIC_SUPABASE_URL: https://jeayplugaajsegkbmwak.supabase.co
+      NEXT_PUBLIC_SUPABASE_ANON_KEY: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImplYXlwbHVnYWFqc2Vna2Jtd2FrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mzc1NDE3ODEsImV4cCI6MjA1MzExNzc4MX0.ghfVlAPhW7DEwQk0s8EVnyXuG1p9dN9f3NiE7_47Fuk
+
+      # Gemini AI Configuration
+      NEXT_PUBLIC_GEMINI_API_KEY: AIzaSyBI9aZS8EIqLegSTxQwD-PhmFnzGMsHLUE
+      NEXT_PUBLIC_GEMINI_MODEL: gemini-2.0-flash
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.blog-app.rule=Host(`codees-cm.com`) || Host(`www.codees-cm.com`)"
+      - "traefik.http.routers.blog-app.entrypoints=websecure"
+      - "traefik.http.routers.blog-app.tls.certresolver=letsencrypt"
+      - "traefik.http.services.blog-app.loadbalancer.server.port=3000"
+      - "traefik.http.middlewares.www-redirect.redirectregex.regex=^https://www\\.(.+)"
+      - "traefik.http.middlewares.www-redirect.redirectregex.replacement=https://$${1}"
+      - "traefik.http.routers.blog-app.middlewares=www-redirect"
+      - "com.centurylinklabs.watchtower.enable=false"
+    networks:
+      - traefik
+
+networks:
+  traefik:
+    external: true

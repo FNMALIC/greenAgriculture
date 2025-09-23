@@ -1,0 +1,160 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: build blog
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      packages: write
+
+    env:
+      NEXT_TELEMETRY_DISABLED: 1
+      NODE_ENV: test
+      NEXT_PUBLIC_GEMINI_API_KEY: AIzaSyBOUCDxmn1o_7qCydXFyuv8gkpn4XOYRCM
+      NEXT_PUBLIC_GEMINI_MODEL: gemini-2.0-flash
+      NEXT_PUBLIC_SUPABASE_ANON_KEY: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImplYXlwbHVnYWFqc2Vna2Jtd2FrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mzc1NDE3ODEsImV4cCI6MjA1MzExNzc4MX0.ghfVlAPhW7DEwQk0s8EVnyXuG1p9dN9f3NiE7_47Fuk
+      NEXT_PUBLIC_SUPABASE_URL : https://jeayplugaajsegkbmwak.supabase.co
+      NEXT_PUBLIC_API_URL : https://codees-cm.vercel.app
+      MONGODB_URI : mongodb+srv://nixonfonkou:ja8y0Ngyrvzeezfe@cluster0.gmrc868.mongodb.net/?retryWrites=true&w=majority&appName=AtlasApp
+      NEXTAUTH_URL : https://codees-cm.vercel.app
+      NEXTAUTH_SECRET : jahskjdhkjahskjdq656q32d+6q5wd6q5wd3sa54s6asd534a5s
+ 
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Log in to GHCR
+        uses: docker/login-action@v2
+        with:
+          registry: ghcr.io
+          username: ${{ secrets.GHCR_USERNAME }}
+          password: ${{ secrets.GHCR_TOKEN }}
+
+      - name: Create .env file
+        run: |
+          echo "NEXT_PUBLIC_API_URL=${{ env.NEXT_PUBLIC_API_URL }}" >> .env
+          echo "NEXT_PUBLIC_GEMINI_API_KEY=${{ env.NEXT_PUBLIC_GEMINI_API_KEY }}" >> .env
+          echo "NEXT_PUBLIC_GEMINI_MODEL=${{ env.NEXT_PUBLIC_GEMINI_MODEL }}" >> .env
+          echo "NEXT_PUBLIC_SUPABASE_ANON_KEY=${{ env.NEXT_PUBLIC_SUPABASE_ANON_KEY }}" >> .env
+          echo "NEXT_PUBLIC_SUPABASE_URL=${{ env.NEXT_PUBLIC_SUPABASE_URL }}" >> .env
+          echo "MONGODB_URI=${{ env.MONGODB_URI }}" >> .env
+          echo "NEXTAUTH_URL=${{ env.NEXTAUTH_URL }}" >> .env
+          echo "NEXTAUTH_SECRET=${{ env.NEXTAUTH_SECRET }}" >> .env
+          echo "NEXT_TELEMETRY_DISABLED=${{ env.NEXT_TELEMETRY_DISABLED }}" >> .env
+      
+      - name: Prepare build context with .env
+        run: |
+          mkdir build-context
+          rsync -av --exclude build-context --exclude node_modules ./ build-context/
+          cp .env build-context/
+
+      - name: Detect package manager
+        id: detect
+        run: |
+          if [ -f "yarn.lock" ]; then
+            echo "pm=yarn" >> "$GITHUB_OUTPUT"
+            echo "cache_path=**/yarn.lock" >> "$GITHUB_OUTPUT"
+          elif [ -f "pnpm-lock.yaml" ]; then
+            echo "pm=pnpm" >> "$GITHUB_OUTPUT"
+            echo "cache_path=**/pnpm-lock.yaml" >> "$GITHUB_OUTPUT"
+          elif [ -f "package-lock.json" ]; then
+            echo "pm=npm" >> "$GITHUB_OUTPUT"
+            echo "cache_path=**/package-lock.json" >> "$GITHUB_OUTPUT"
+          else
+            echo "pm=npm" >> "$GITHUB_OUTPUT"
+            echo "cache_path=**/package.json" >> "$GITHUB_OUTPUT"
+          fi
+          echo "Using package manager: $(cat $GITHUB_OUTPUT)"
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: ${{ steps.detect.outputs.pm }}
+          cache-dependency-path: ${{ steps.detect.outputs.cache_path }}
+
+      - name: Setup pnpm
+        if: ${{ steps.detect.outputs.pm == 'pnpm' }}
+        uses: pnpm/action-setup@v4
+        with:
+          version: 8
+
+      - name: Install dependencies (npm)
+        if: ${{ steps.detect.outputs.pm == 'npm' }}
+        run: npm ci
+
+      - name: Install dependencies (yarn)
+        if: ${{ steps.detect.outputs.pm == 'yarn' }}
+        run: yarn install --frozen-lockfile
+
+      - name: Install dependencies (pnpm)
+        if: ${{ steps.detect.outputs.pm == 'pnpm' }}
+        run: pnpm install --frozen-lockfile
+
+      - name: Cache Next.js build
+        uses: actions/cache@v4
+        with:
+          path: |
+            .next/cache
+          key: ${{ runner.os }}-next-${{ hashFiles('**/package-lock.json', '**/yarn.lock', '**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-next-
+
+   
+
+      - name: Build (yarn)
+        if: ${{ steps.detect.outputs.pm == 'yarn' }}
+        run: yarn run build
+
+      - name: Build (pnpm)
+        if: ${{ steps.detect.outputs.pm == 'pnpm' }}
+        run: pnpm run build
+
+      - name: Set lowercase username
+        id: vars
+        run: echo "USERNAME_LOWER=$(echo ${{ secrets.GHCR_USERNAME }} | tr '[:upper:]' '[:lower:]')" >> $GITHUB_OUTPUT
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v4
+        with:
+          context: build-context
+          push: true
+          tags: ghcr.io/${{ steps.vars.outputs.USERNAME_LOWER }}/my-nextjs-app:latest
+
+      - name: Deploy to server
+        if: github.ref == 'refs/heads/main'
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SERVER_SSH_KEY }}
+          script: |
+            cd ~/blog-codees
+            # Stop watchtower temporarily to avoid conflicts
+            docker stop watchtower || true
+
+            # Pull and deploy
+            docker compose pull blog-app
+            docker compose up -d blog-app
+
+            # Wait for service to be healthy
+            sleep 10
+            docker compose ps blog-app
+
+            # Restart watchtower
+            docker start watchtower || true
+
+            # Cleanup
+            docker image prune -f
