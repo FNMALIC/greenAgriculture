@@ -5,7 +5,7 @@ import MentorshipHero from "@/components/MentorshipHero";
 import ProgramOverview from './ProgramOverview';
 import PricingSection from './PricingSection';
 import FeaturedMentors from "@/components/FeaturedMentors";
-import HowItWorks from "@/components/HowItWorks";
+import { HowItWorks } from "@/components/HowItWorks";
 import ApplicationForm from "@/components/ApplicationForm";
 import { ArrowRight, Star } from 'lucide-react';
 import { Card } from './ui/card';
