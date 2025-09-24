@@ -4,6 +4,7 @@ import Script from "next/script";
 import ClientProviders from "./client-providers";
 import { metadata } from './metadata';
 import StructuredData from "@/components/structured-data";
+import TanstackProvider from "@/providers/TanstackProvider";
 
 // Export the metadata
 export { metadata };
@@ -39,10 +40,14 @@ export default function RootLayout({
         </head>
         <body>
         <div className="min-h-screen bg-white">
-            <StructuredData />
+            {/*<StructuredData />*/}
+            <TanstackProvider>
+
             <ClientProviders>
                 {children}
             </ClientProviders>
+            </TanstackProvider>
+
         </div>
         </body>
         </html>
