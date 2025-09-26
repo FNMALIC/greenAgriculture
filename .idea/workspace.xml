@@ -5,17 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="01e4415d-b961-454d-affb-7e4aab12befb" name="Changes" comment="reolve role problem in server , and create the user interfaces to start in with">
-      <change afterPath="$PROJECT_DIR$/app/(auth)/activate/[uid]/[token]/ActivationComponent.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(auth)/activate/[uid]/[token]/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hooks/use-verify.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/providers/TanstackProvider.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/api.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/apis/auth.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/uploadImage.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/uploadImage.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -177,7 +167,8 @@
       <workItem from="1758550666184" duration="1682000" />
       <workItem from="1758621747932" duration="1136000" />
       <workItem from="1758625314544" duration="6393000" />
-      <workItem from="1758714994259" duration="1451000" />
+      <workItem from="1758714994259" duration="1559000" />
+      <workItem from="1758796523442" duration="53000" />
     </task>
     <task id="LOCAL-00001" summary="user management  , and and admin panel complete">
       <option name="closed" value="true" />
