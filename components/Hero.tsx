@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Users, TrendingUp, Shield } from "lucide-react";
+import { ArrowRight, Users, TrendingUp, Shield, Smartphone } from "lucide-react";
 
 export function Hero() {
   return (
@@ -32,6 +32,17 @@ export function Hero() {
               >
                 Learn More
               </Link>
+            </div>
+
+            <div className="mt-6">
+              <a
+                href="/croplink-beta.apk"
+                download="CropLink-Beta.apk"
+                className="inline-flex items-center justify-center px-6 py-2 bg-gray-800 text-white font-medium rounded-lg hover:bg-gray-700 transition-colors group"
+              >
+                <Smartphone className="mr-2 h-4 w-4" />
+                Download Android App (Beta)
+              </a>
             </div>
 
             <div className="mt-12 grid grid-cols-3 gap-8">
