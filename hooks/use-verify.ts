@@ -16,7 +16,12 @@ export const useActivation = () => {
   });
 
   const activation = async (verifyUser) => {
-    await activationMutate(verifyUser);
+    return new Promise((resolve, reject) => {
+      activationMutate(verifyUser, {
+        onSuccess: (data) => resolve(data),
+        onError: (error) => reject(error)
+      });
+    });
   };
 
   return {
