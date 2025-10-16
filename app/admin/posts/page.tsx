@@ -122,6 +122,7 @@ export default function PostsPage() {
                         <TableRow>
                             <TableHead>Title</TableHead>
                             <TableHead>Status</TableHead>
+                            <TableHead>Scheduled</TableHead>
                             <TableHead>Author</TableHead>
                             <TableHead>Created</TableHead>
                             <TableHead className="text-right">Actions</TableHead>
@@ -133,10 +134,20 @@ export default function PostsPage() {
                                 <TableCell>{post.title}</TableCell>
                                 <TableCell>
                 <span className={`px-2 py-1 rounded-full text-xs ${
-                    post.status === 'published' ? 'bg-green-100 text-green-800' : 'bg-gray-100 text-gray-800'
+                    post.status === 'published' 
+                        ? 'bg-green-100 text-green-800' 
+                        : post.status === 'scheduled'
+                        ? 'bg-blue-100 text-blue-800'
+                        : 'bg-gray-100 text-gray-800'
                 }`}>
                   {post.status}
                 </span>
+                                </TableCell>
+                                <TableCell>
+                                    {post.status === 'scheduled' && post.scheduledAt 
+                                        ? new Date(post.scheduledAt).toLocaleString()
+                                        : '-'
+                                    }
                                 </TableCell>
                                 <TableCell>{post.author.name}</TableCell>
                                 <TableCell>{new Date(post.createdAt).toLocaleDateString()}</TableCell>

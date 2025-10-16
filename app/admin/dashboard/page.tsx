@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import ScheduledPostsManager from "@/components/admin/ScheduledPostsManager";
 import {
     Download,
     TrendingUp,
@@ -146,30 +147,38 @@ export default function Dashboard() {
                 </Card>
             </div>
 
-            <Card>
-                <CardHeader>
-                    <CardTitle>Views Over Time</CardTitle>
-                </CardHeader>
-                <CardContent>
-                    <div className="h-[300px]">
-                        <ResponsiveContainer width="100%" height="100%">
-                            <LineChart data={viewsData}>
-                                <CartesianGrid strokeDasharray="3 3" />
-                                <XAxis dataKey="name" />
-                                <YAxis />
-                                <Tooltip />
-                                <Line
-                                    type="monotone"
-                                    dataKey="views"
-                                    stroke="#2563eb"
-                                    strokeWidth={2}
-                                    dot={false}
-                                />
-                            </LineChart>
-                        </ResponsiveContainer>
-                    </div>
-                </CardContent>
-            </Card>
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <div className="lg:col-span-2">
+                    <Card>
+                        <CardHeader>
+                            <CardTitle>Views Over Time</CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                            <div className="h-[300px]">
+                                <ResponsiveContainer width="100%" height="100%">
+                                    <LineChart data={viewsData}>
+                                        <CartesianGrid strokeDasharray="3 3" />
+                                        <XAxis dataKey="name" />
+                                        <YAxis />
+                                        <Tooltip />
+                                        <Line
+                                            type="monotone"
+                                            dataKey="views"
+                                            stroke="#2563eb"
+                                            strokeWidth={2}
+                                            dot={false}
+                                        />
+                                    </LineChart>
+                                </ResponsiveContainer>
+                            </div>
+                        </CardContent>
+                    </Card>
+                </div>
+                
+                <div>
+                    <ScheduledPostsManager />
+                </div>
+            </div>
         </div>
     );
 }

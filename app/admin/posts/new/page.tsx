@@ -32,7 +32,8 @@ const postSchema = z.object({
     content: z.string().min(1, 'Content is required'),
     excerpt: z.string().min(1, 'Excerpt is required').max(500, 'Excerpt cannot be more than 500 characters'),
     coverImage: z.string().optional(),
-    status: z.enum(['draft', 'published']),
+    status: z.enum(['draft', 'published', 'scheduled']),
+    scheduledAt: z.string().optional(),
     tags: z.string(),
     author: z.object({
         name: z.string().default('fnmalic'),
@@ -55,6 +56,7 @@ export default function CreatePost() {
             excerpt: '',
             coverImage: '',
             status: 'draft',
+            scheduledAt: '',
             tags: '',
         },
     });
@@ -70,10 +72,33 @@ export default function CreatePost() {
         try {
             setIsLoading(true);
 
+            // Validate scheduled date if status is scheduled
+            if (values.status === 'scheduled') {
+                if (!values.scheduledAt) {
+                    toast({
+                        variant: "destructive",
+                        title: "Error",
+                        description: "Scheduled date is required for scheduled posts",
+                    });
+                    return;
+                }
+                
+                const scheduledDate = new Date(values.scheduledAt);
+                if (scheduledDate <= new Date()) {
+                    toast({
+                        variant: "destructive",
+                        title: "Error",
+                        description: "Scheduled date must be in the future",
+                    });
+                    return;
+                }
+            }
+
             // Format the data to match the model
             const postData = {
                 ...values,
                 tags: values.tags.split(',').map(tag => tag.trim()).filter(tag => tag !== ''),
+                scheduledAt: values.status === 'scheduled' && values.scheduledAt ? new Date(values.scheduledAt) : undefined,
                 author: {
                     name: 'fnmalic'
                 }
@@ -95,7 +120,7 @@ export default function CreatePost() {
 
             toast({
                 title: "Success",
-                description: "Post created successfully",
+                description: values.status === 'scheduled' ? "Post scheduled successfully" : "Post created successfully",
             });
 
             router.push('/admin/posts');
@@ -250,6 +275,7 @@ export default function CreatePost() {
                                                 <SelectContent>
                                                     <SelectItem value="draft">Draft</SelectItem>
                                                     <SelectItem value="published">Published</SelectItem>
+                                                    <SelectItem value="scheduled">Scheduled</SelectItem>
                                                 </SelectContent>
                                             </Select>
                                             <FormMessage />
@@ -271,6 +297,26 @@ export default function CreatePost() {
                                     )}
                                 />
                             </div>
+
+                            {form.watch('status') === 'scheduled' && (
+                                <FormField
+                                    control={form.control}
+                                    name="scheduledAt"
+                                    render={({ field }) => (
+                                        <FormItem>
+                                            <FormLabel>Scheduled Date & Time</FormLabel>
+                                            <FormControl>
+                                                <Input 
+                                                    type="datetime-local" 
+                                                    {...field}
+                                                    min={new Date().toISOString().slice(0, 16)}
+                                                />
+                                            </FormControl>
+                                            <FormMessage />
+                                        </FormItem>
+                                    )}
+                                />
+                            )}
 
                             <div className="flex space-x-4">
                                 <Button type="submit" disabled={isLoading}>

@@ -11,7 +11,8 @@ export interface IPost {
     image?: string;
   };
   tags: string[];
-  status: 'draft' | 'published';
+  status: 'draft' | 'published' | 'scheduled';
+  scheduledAt?: Date;
   createdAt: Date;
   updatedAt: Date;
 }
@@ -57,8 +58,11 @@ const postSchema = new Schema<IPost>(
     }],
     status: {
       type: String,
-      enum: ['draft', 'published'],
+      enum: ['draft', 'published', 'scheduled'],
       default: 'draft',
+    },
+    scheduledAt: {
+      type: Date,
     },
   },
   {

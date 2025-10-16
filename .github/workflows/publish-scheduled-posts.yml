@@ -1,0 +1,16 @@
+name: Publish Scheduled Posts
+
+on:
+  schedule:
+    - cron: '0 0,12 * * *'  # Every 12 hours (12:00 AM and 12:00 PM UTC)
+  workflow_dispatch:  # Manual trigger
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Publish scheduled posts
+        run: |
+          curl -X GET \
+            -H "Authorization: Bearer ${{ secrets.CRON_SECRET }}" \
+            "${{ secrets.VERCEL_URL }}/api/cron/publish-scheduled"
