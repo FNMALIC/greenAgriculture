@@ -1,0 +1,37 @@
+name: Deploy Ubuntu-X Services
+
+on:
+  schedule:
+    - cron: '0 6,14,22 * * *'  # 3 times daily: 6:00 AM, 2:00 PM, 10:00 PM UTC
+  workflow_dispatch:  # Manual trigger
+
+jobs:
+  deploy-services:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy Ubuntu-X Services
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SERVER_SSH_KEY }}
+          script: |
+            # Deploy validators
+            cd ~/ubuntu-x/ubuntux-validators/
+            docker compose up -d
+            
+            # Deploy frontend
+            cd ~/ubuntu-x/ubuntux-frontend/
+            docker compose up -d
+            
+            # Deploy backend
+            cd ~/ubuntu-x/ubuntux-backend/
+            docker compose up -d
+            
+            # Deploy landing
+            cd ~/ubuntu-x/ubuntux-landing/
+            docker compose up -d
+            
+            # Verify all services are running
+            echo "Services status:"
+            docker ps --format "table {{.Names}}\t{{.Status}}"

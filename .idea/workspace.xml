@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="01e4415d-b961-454d-affb-7e4aab12befb" name="Changes" comment="reolve role problem in server , and create the user interfaces to start in with">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="01e4415d-b961-454d-affb-7e4aab12befb" name="Changes" comment="reolve role problem in server , and create the user interfaces to start in with" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -169,6 +167,7 @@
       <workItem from="1758625314544" duration="6393000" />
       <workItem from="1758714994259" duration="1559000" />
       <workItem from="1758796523442" duration="53000" />
+      <workItem from="1758875121623" duration="1905000" />
     </task>
     <task id="LOCAL-00001" summary="user management  , and and admin panel complete">
       <option name="closed" value="true" />
